@@ -9,9 +9,6 @@ api = tweepy.API(auth)
 
 user = api.me()
 
-# print(user.name)
-# print(user.followers_count)
-
 def limit_handler(cursor):
     while True:
         try:
@@ -33,6 +30,8 @@ for tweet in tweepy.Cursor(api.search, search_str).items(2):
     except StopIteration:
         break
 
+# print(user.name)
+# print(user.followers_count)
 
 #Generous Bot
 # for follower in limit_handler(tweepy.Cursor(api.followers).items()):
